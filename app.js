@@ -15,14 +15,14 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
-  res.render("home");
+  res.render("index");
 });
-app.post("/", async (req, res) => {
+app.get("/convert", async (req, res) => {
   try {
     //console.log(req.body);
-    let sourceVal = req.body.sourceVal;
-    let sourceCurr = req.body.currencies[0];
-    let destCurr = req.body.currencies[1];
+    let sourceVal = req.query.sv;
+    let sourceCurr = req.query.mc1;
+    let destCurr = req.query.mc2;
 
     const response = await axios.get(
       `https://prime.exchangerate-api.com/v5/${key}/latest/${sourceCurr}`
@@ -31,7 +31,8 @@ app.post("/", async (req, res) => {
     let converted = response.data.conversion_rates[destCurr];
     let final = converted * sourceVal;
     console.log(final);
-    res.redirect("/?final=" + final);
+    // res.redirect("/?final=" + final);
+    res.send({ final: final });
   } catch (error) {
     console.error(error);
   }
