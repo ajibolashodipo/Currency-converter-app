@@ -16,7 +16,6 @@ app.get("/", async (req, res) => {
 });
 app.get("/convert", async (req, res) => {
   try {
-    //console.log(req.body);
     let sourceVal = req.query.sv;
     let sourceCurr = req.query.mc1;
     let destCurr = req.query.mc2;
