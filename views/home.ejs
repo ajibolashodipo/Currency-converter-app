@@ -17,16 +17,17 @@
         <div class="container">
           <h1>Welcome to currency converter</h1>
 
-          <form action="/" method="POST">
+          <form action="" method="">
             <div class="source-div">
               <input
                 type="number"
                 placeholder="source currency"
                 name="sourceVal"
+                id="sourceVal"
               />
               <!-- <label for="pet-select">Choose a pet:</label> -->
 
-              <select name="currencies" id="my-currency">
+              <select name="currencies" id="my-currency-1">
                 <option value="USD" name="USD">United States Dollar</option>
                 <option value="GBP" name="GBP">Great Britain Pound</option>
                 <option value="CAD">Canadian Dollar</option>
@@ -37,16 +38,19 @@
                 type="number"
                 placeholder="destination"
                 name="destinationVal"
+                id="destinationVal"
+                value=""
+                readonly
               />
               <!-- <label for="pet-select">Choose a pet:</label> -->
 
-              <select name="currencies" id="my-currency">
+              <select name="currencies" id="my-currency-2">
                 <option value="USD">United States Dollar</option>
                 <option value="GBP" name="GBP">Great Britain Pound</option>
                 <option value="CAD" name="CAD">Canadian Dollar</option>
               </select>
             </div>
-            <button type="submit">Submit</button>
+            <button id="first-submit" type="submit">Submit</button>
           </form>
         </div>
       </section>

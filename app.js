@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
     let converted = response.data.conversion_rates[destCurr];
     let final = converted * sourceVal;
     console.log(final);
-    res.redirect("/");
+    res.redirect("/?final=" + final);
   } catch (error) {
     console.error(error);
   }
