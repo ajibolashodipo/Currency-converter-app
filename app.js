@@ -23,13 +23,42 @@ app.get("/convert", async (req, res) => {
     let sourceVal = req.query.sv;
     let sourceCurr = req.query.mc1;
     let destCurr = req.query.mc2;
+    let nairaToDollar = 389.7;
+
+    //if source currency is Naira
+    if (sourceCurr === "NGN") {
+      console.log("agbeke");
+      sourceCurr = "USD";
+    }
+
+    //if destination currency is Naira
+    if (destCurr === "NGN") {
+      console.log("agbeke");
+      destCurr = "USD";
+    }
 
     const response = await axios.get(
       `https://prime.exchangerate-api.com/v5/${key}/latest/${sourceCurr}`
     );
 
-    let converted = response.data.conversion_rates[destCurr];
+    let converted = await response.data.conversion_rates[destCurr];
+    console.log("shoeeeeee");
+    console.log(converted);
+    //converted = converted / nairaToDollar;
+    console.log(typeof converted);
+
+    if (sourceCurr === "NGN") {
+      //converted = converted / nairaToDollar;
+      console.log("aji" + converted);
+    }
+
+    if (destCurr === "NGN") {
+      // converted = converted * nairaToDollar;
+      console.log("shod" + converted);
+    }
+
     let final = converted * sourceVal;
+    console.log("serendi");
     console.log(final);
     // res.redirect("/?final=" + final);
     res.send({ final: final });
