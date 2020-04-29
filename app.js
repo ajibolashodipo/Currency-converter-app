@@ -43,15 +43,16 @@ app.get("/convert", async (req, res) => {
     //convert to naira since API does not support Naira
     if (sourceNaira === "NGN") {
       convertedTemp = converted / nairaToDollar;
-      converted = convertedTemp.toFixed(2);
+      converted = convertedTemp;
     }
     //convert to naira since API does not support Naira
     if (destNaira === "NGN") {
       convertedTemp = converted * nairaToDollar;
-      converted = convertedTemp.toFixed(2);
+      converted = convertedTemp;
     }
     //Final value
-    let final = converted * sourceVal;
+    let tempFinal = converted * sourceVal;
+    let final = tempFinal.toFixed(2);
 
     //this solves the floating point problem should source and destination be the same
     if (sourceNaira === "NGN" && destNaira === "NGN") {

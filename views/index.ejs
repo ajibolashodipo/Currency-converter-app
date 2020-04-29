@@ -9,83 +9,140 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
+      crossorigin="anonymous"
+    />
     <title>CurrencyConverter</title>
   </head>
   <body>
     <div class="all-content">
       <section>
         <div class="container">
-          <h1>Currency Converter</h1>
+          <div class="form-container">
+            <h1>Currency Converter</h1>
 
-          <form action="" id="form-1" method="">
-            <div class="source-div">
-              <input
-                type="number"
-                placeholder="source currency"
-                name="sourceVal"
-                id="sourceVal"
-              />
-              <!-- <label for="pet-select">Choose a pet:</label> -->
+            <form id="form-1">
+              <div class="form-group row source-div">
+                <input
+                  type="number"
+                  placeholder="source"
+                  class="form-control col"
+                  name="sourceVal"
+                  id="sourceVal"
+                />
+                <select
+                  name="currencies"
+                  id="my-currency-1"
+                  class="form-control col"
+                >
+                  <option value="NGN">Nigerian Naira</option>
+                  <option value="USD">United States Dollar</option>
+                  <option value="GBP">Great Britain Pound</option>
+                  <option value="EUR">Euro</option>
+                  <option value="CAD">Canadian Dollar</option>
+                  <option value="ZAR">South African Rand</option>
+                  <option value="UAH">Ukrainian Hryvnia</option>
+                  <option value="TRY">Turkish Lira</option>
+                  <option value="SAR">Saudi Riyal</option>
+                  <option value="RUB">Russian Ruble</option>
+                  <option value="PLN"> Polish Zloty</option>
+                  <option value="PKR">Pakistani Rupee</option>
+                  <option value="MXN">Mexican Peso</option>
+                  <option value="JPY">Japanese Yen</option>
+                  <option value="INR">Indian Rupee</option>
+                  <option value="CNY">Chinese Yuan</option>
+                  <option value="CHF">Swiss Franc</option>
+                  <option value="AUD">Australian Dollar</option>
+                  <option value="AED">UAE Dirham</option>
+                </select>
+              </div>
+              <div class="form-group form-inline destination-div row">
+                <input
+                  type="number"
+                  placeholder="result"
+                  name="destinationVal"
+                  id="destinationVal"
+                  class="form-control col"
+                  value=""
+                  readonly
+                />
+                <select
+                  name="currencies"
+                  id="my-currency-2"
+                  class="form-control col"
+                >
+                  <option value="USD">United States Dollar</option>
+                  <option value="NGN">Nigerian Naira</option>
+                  <option value="GBP">Great Britain Pound</option>
+                  <option value="EUR">Euro</option>
+                  <option value="CAD">Canadian Dollar</option>
+                  <option value="ZAR">South African Rand</option>
+                  <option value="UAH">Ukrainian Hryvnia</option>
+                  <option value="TRY">Turkish Lira</option>
+                  <option value="SAR">Saudi Riyal</option>
+                  <option value="RUB">Russian Ruble</option>
+                  <option value="PLN"> Polish Zloty</option>
+                  <option value="PKR">Pakistani Rupee</option>
+                  <option value="MXN">Mexican Peso</option>
+                  <option value="JPY">Japanese Yen</option>
+                  <option value="INR">Indian Rupee</option>
+                  <option value="CNY">Chinese Yuan</option>
+                  <option value="CHF">Swiss Franc</option>
+                  <option value="AUD">Australian Dollar</option>
+                  <option value="AED">UAE Dirham</option>
+                </select>
+              </div>
 
-              <select name="currencies" id="my-currency-1">
-                <option value="NGN">Nigerian Naira</option>
-                <option value="USD">United States Dollar</option>
-                <option value="GBP">Great Britain Pound</option>
-                <option value="EUR">Euro</option>
-                <option value="CAD">Canadian Dollar</option>
-                <option value="ZAR">South African Rand</option>
-                <option value="UAH">Ukrainian Hryvnia</option>
-                <option value="TRY">Turkish Lira</option>
-                <option value="SAR">Saudi Riyal</option>
-                <option value="RUB">Russian Ruble</option>
-                <option value="PLN"> Polish Zloty</option>
-                <option value="PKR">Pakistani Rupee</option>
-                <option value="MXN">Mexican Peso</option>
-                <option value="JPY">Japanese Yen</option>
-                <option value="INR">Indian Rupee</option>
-                <option value="CNY">Chinese Yuan</option>
-                <option value="CHF">Swiss Franc</option>
-                <option value="AUD">Australian Dollar</option>
-                <option value="AED">UAE Dirham</option>
-              </select>
-            </div>
-            <div class="destination-div">
-              <input
-                type="number"
-                placeholder="destination"
-                name="destinationVal"
-                id="destinationVal"
-                value=""
-              />
-              <!-- <label for="pet-select">Choose a pet:</label> -->
+              <button type="submit" id="first-submit" class="btn btn-primary">
+                Submit
+              </button>
+            </form>
 
-              <select name="currencies" id="my-currency-2">
-                <option value="NGN">Nigerian Naira</option>
-                <option value="USD">United States Dollar</option>
-                <option value="GBP">Great Britain Pound</option>
-                <option value="EUR">Euro</option>
-                <option value="CAD">Canadian Dollar</option>
-                <option value="ZAR">South African Rand</option>
-                <option value="UAH">Ukrainian Hryvnia</option>
-                <option value="TRY">Turkish Lira</option>
-                <option value="SAR">Saudi Riyal</option>
-                <option value="RUB">Russian Ruble</option>
-                <option value="PLN"> Polish Zloty</option>
-                <option value="PKR">Pakistani Rupee</option>
-                <option value="MXN">Mexican Peso</option>
-                <option value="JPY">Japanese Yen</option>
-                <option value="INR">Indian Rupee</option>
-                <option value="CNY">Chinese Yuan</option>
-                <option value="CHF">Swiss Franc</option>
-                <option value="AUD">Australian Dollar</option>
-                <option value="AED">UAE Dirham</option>
-              </select>
-            </div>
-            <button id="first-submit" type="submit">Submit</button>
-          </form>
+            <p>
+              Note: Naira not supported natively by the API. Took $1=389.70
+              Naira
+            </p>
+            <p>
+              Currency Data from the
+              <a href="https://www.exchangerate-api.com/">Exchange-Rate API</a>
+            </p>
+          </div>
         </div>
       </section>
     </div>
+    <footer id="real-footer">
+      <div class="real-footer-section">
+        <h3>Designed by Ajibola Shodipo</h3>
+        <ul>
+          <li>
+            <a target="_blank" href="http://www.twitter.com/sho_rendipity">
+              <i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/ahmed-ajibola-shodipo/"
+            >
+              <i class="fab fa-linkedin fa-spin"></i
+            ></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ajibolashodipo">
+              <i class="fab fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     <script src="/app.js"></script>
     <script
