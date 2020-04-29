@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const axios = require("axios");
 
 const app = express();
 
 require("dotenv").config();
 
 const port = process.env.PORT;
+const key = process.env.API_KEY;
 
 //middleware
 app.set("view engine", "ejs");
@@ -16,13 +18,23 @@ app.get("/", async (req, res) => {
   res.render("home");
 });
 app.post("/", async (req, res) => {
-  console.log(req.body);
+  try {
+    //console.log(req.body);
+    let sourceVal = req.body.sourceVal;
+    let sourceCurr = req.body.currencies[0];
+    let destCurr = req.body.currencies[1];
 
+    const response = await axios.get(
+      `https://prime.exchangerate-api.com/v5/${key}/latest/${sourceCurr}`
+    );
 
-
-
-  
-  res.redirect("/");
+    let converted = response.data.conversion_rates[destCurr];
+    let final = converted * sourceVal;
+    console.log(final);
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.listen(port, () => {
