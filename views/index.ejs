@@ -14,6 +14,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" href="/img/icon.png" />
+
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 576px)"
+      href="/css/mobile.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
@@ -33,15 +40,17 @@
               <div class="form-group row source-div">
                 <input
                   type="number"
-                  placeholder="source"
-                  class="form-control col"
+                  placeholder="0.00"
+                  class="form-control col-5"
                   name="sourceVal"
                   id="sourceVal"
+                  required
                 />
+                <!-- <div class="col-1"></div> -->
                 <select
                   name="currencies"
                   id="my-currency-1"
-                  class="form-control col"
+                  class="form-control col-7"
                 >
                   <option value="NGN">Nigerian Naira</option>
                   <option value="USD">United States Dollar</option>
@@ -66,18 +75,18 @@
               </div>
               <div class="form-group form-inline destination-div row">
                 <input
-                  type="number"
                   placeholder="result"
                   name="destinationVal"
                   id="destinationVal"
-                  class="form-control col"
+                  class="form-control col-5"
                   value=""
                   readonly
                 />
+                <!-- <div class="col-1"></div> -->
                 <select
                   name="currencies"
                   id="my-currency-2"
-                  class="form-control col"
+                  class="form-control col-7"
                 >
                   <option value="USD">United States Dollar</option>
                   <option value="NGN">Nigerian Naira</option>
