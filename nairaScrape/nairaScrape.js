@@ -1,6 +1,8 @@
 const puppeteer = require("puppeteer");
 let scrape = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+  });
   const page = await browser.newPage();
   const url =
     "https://www.google.com/search?q=1usd+to+ngn&rlz=1C1CHFX_enTR795TR795&oq=1usd+to+ngn&aqs=chrome..69i57j0l6.3519j1j9&sourceid=chrome&ie=UTF-8";
