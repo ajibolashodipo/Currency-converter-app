@@ -1,9 +1,10 @@
 .container {
-  width: 97.5%;
+  width: 97%;
   margin: 20% auto;
 }
 .form-container {
-  width: 95%;
+  width: 90%;
+  padding: 5% 7.5%;
 }
 .real-footer-section h3 {
   font-size: 0.8rem;

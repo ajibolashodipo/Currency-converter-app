@@ -2,9 +2,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const app = express();
+const usdToNaira = require("./nairaScrape/nairaScrape");
 require("dotenv").config();
 const port = process.env.PORT;
 const key = process.env.API_KEY;
+
+// async function run() {
+//   let value = await usdToNaira();
+//   console.log(value);
+// }
+// run();
 
 //middleware
 app.set("view engine", "ejs");
@@ -20,8 +27,10 @@ app.get("/convert", async (req, res) => {
     let sourceCurr = req.query.mc1;
     let destCurr = req.query.mc2;
     let sourceNaira = req.query.mc1;
+    let valued = await usdToNaira();
+    let rateNaira = parseInt(valued.conversionRate);
     let destNaira = req.query.mc2;
-    let nairaToDollar = 389.7;
+    let nairaToDollar = rateNaira||389.7;
 
     //check if source currency is Naira
     if (sourceCurr === "NGN") {
