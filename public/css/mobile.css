@@ -6,6 +6,16 @@
   width: 90%;
   padding: 5% 7.5%;
 }
+
+.form-container h1 {
+  padding-bottom: 7.5%;
+}
+
+#first-submit {
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
 .real-footer-section h3 {
   font-size: 0.8rem;
 }
