@@ -7,11 +7,6 @@ require("dotenv").config();
 const port = process.env.PORT;
 const key = process.env.API_KEY;
 
-// async function run() {
-//   let value = await usdToNaira();
-//   console.log(value);
-// }
-// run();
 
 //middleware
 app.set("view engine", "ejs");
@@ -67,7 +62,6 @@ app.get("/convert", async (req, res) => {
       if (sourceNaira === "NGN") {
         convertedTemp = converted / nairaToDollar;
         converted = convertedTemp;
-        console.log(converted);
         return converted;
       }
 
@@ -75,7 +69,6 @@ app.get("/convert", async (req, res) => {
       if (destNaira === "NGN") {
         convertedTemp = converted * nairaToDollar;
         converted = convertedTemp;
-        console.log(converted);
         return converted;
       }
     }
