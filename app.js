@@ -30,7 +30,7 @@ app.get("/convert", async (req, res) => {
     let valued = await usdToNaira();
     let rateNaira = parseInt(valued.conversionRate);
     let destNaira = req.query.mc2;
-    let nairaToDollar = rateNaira||389.7;
+    let nairaToDollar = rateNaira || 389.7;
 
     //check if source currency is Naira
     if (sourceCurr === "NGN") {
